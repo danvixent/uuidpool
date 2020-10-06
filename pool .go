@@ -2,45 +2,50 @@ package uuid_pool
 
 import (
 	"github.com/google/uuid"
-	"sync"
 )
 
 type UUIDPool struct {
-	get  sync.Mutex
-	repl sync.Mutex
-	pool []uuid.UUID
-	off  uint16
+	stop chan struct{}
+	pool chan uuid.UUID
 }
 
-func NewUUIDPool(size uint16) *UUIDPool {
+func NewUUIDPool(size uint) *UUIDPool {
 	pool := &UUIDPool{
-		pool: make([]uuid.UUID, size),
-		off:  size - 1,
+		pool: make(chan uuid.UUID, size),
+		stop: make(chan struct{}, 1),
 	}
 	pool.fillPool()
+	go pool.watch()
 	return pool
 }
 
-func (p *UUIDPool) Get() uuid.UUID {
-	p.get.Lock()
-	u := p.pool[p.off]
-	go p.replace(p.off)
-
-	if p.off == 0 {
-		p.off = uint16(len(p.pool))
-	}
-
-	p.off--
-	p.get.Unlock()
-	return u
-}
-
 func (p *UUIDPool) fillPool() {
-	for i := range p.pool {
-		p.pool[i] = uuid.New()
+	for i := 0; i < len(p.pool); i++ {
+		p.pool <- uuid.New()
 	}
 }
 
-func (p *UUIDPool) replace(pos uint16) {
-	p.pool[pos] = uuid.New()
+func (p *UUIDPool) watch() {
+	for {
+		select {
+		case <-p.stop:
+			p.pool = nil
+			p.stop = nil
+			return
+		default:
+			// code here will be stuck trying to send on p.pool
+			// until a uuid leaves the channel p.stop will never
+			// be checked, fix this
+			p.pool <- uuid.New()
+		}
+	}
+}
+
+func (p *UUIDPool) Get() uuid.UUID {
+	return <-p.pool
+}
+
+func (p UUIDPool) Dissolve() {
+	p.stop <- struct{}{}
+	return
 }
