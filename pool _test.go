@@ -46,11 +46,19 @@ func TestUUIDPool_Get(t *testing.T) {
 var pool = NewUUIDPool(4294967)
 
 func BenchmarkUUIDPool_Get(b *testing.B) {
-	b.N = 500000
-	var uu uuid.UUID
 	for i := 0; i < b.N; i++ {
-		uu = pool.Get()
+		// uuid.New()
+		pool.Get()
 	}
-	_ = &uu
-	pool.Dissolve()
+}
+
+// This functions benchmarks uuid.New in an "imported context"
+// With this you can see that, the pool gives better performance
+//
+// As at the time written the New() benchmark in google/uuid
+// is exactly the same as this.
+func BenchmarkUUID_New(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		uuid.New()
+	}
 }
