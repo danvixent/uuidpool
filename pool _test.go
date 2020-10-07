@@ -1,9 +1,10 @@
 package uuid_pool
 
 import (
-	"github.com/google/uuid"
 	"reflect"
 	"testing"
+
+	"github.com/google/uuid"
 )
 
 func TestNewUUIDPool(t *testing.T) {
@@ -45,6 +46,7 @@ func TestUUIDPool_Get(t *testing.T) {
 var pool = NewUUIDPool(4294967)
 
 func BenchmarkUUIDPool_Get(b *testing.B) {
+	b.N = 500000
 	var uu uuid.UUID
 	for i := 0; i < b.N; i++ {
 		uu = pool.Get()

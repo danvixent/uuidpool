@@ -12,7 +12,7 @@ type UUIDPool struct {
 func NewUUIDPool(size uint) *UUIDPool {
 	pool := &UUIDPool{
 		pool: make(chan uuid.UUID, size),
-		stop: make(chan struct{}, 1),
+		stop: make(chan struct{}),
 	}
 	pool.fillPool()
 	go pool.watch()
@@ -28,15 +28,15 @@ func (p *UUIDPool) fillPool() {
 func (p *UUIDPool) watch() {
 	for {
 		select {
+		case p.pool <- uuid.New():
+
 		case <-p.stop:
-			p.pool = nil
-			p.stop = nil
-			return
-		default:
 			// code here will be stuck trying to send on p.pool
 			// until a uuid leaves the channel p.stop will never
 			// be checked, fix this
-			p.pool <- uuid.New()
+			p.pool = nil
+			p.stop = nil
+			return
 		}
 	}
 }
@@ -45,7 +45,6 @@ func (p *UUIDPool) Get() uuid.UUID {
 	return <-p.pool
 }
 
-func (p UUIDPool) Dissolve() {
+func (p *UUIDPool) Dissolve() {
 	p.stop <- struct{}{}
-	return
 }
