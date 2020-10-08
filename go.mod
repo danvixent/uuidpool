@@ -1,4 +1,4 @@
-module github.com/danvixent/uuid-pool
+module github.com/danvixent/uuidpool
 
 go 1.15
 
