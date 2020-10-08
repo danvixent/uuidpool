@@ -1,4 +1,4 @@
-package uuid_pool
+package uuidpool
 
 import (
 	"reflect"

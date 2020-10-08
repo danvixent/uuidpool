@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e851035e-6b8d-46a0-960c-034614a46ff5" name="Default Changelist" comment="add files">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pool .go" beforeDir="false" afterPath="$PROJECT_DIR$/pool .go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pool _test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pool _test.go" afterDir="false" />
-    </list>
+    <list default="true" id="e851035e-6b8d-46a0-960c-034614a46ff5" name="Default Changelist" comment="add files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +52,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="Go Test.BenchmarkUUIDPool_Get in github.com/danvixent/uuid-pool">
+  <component name="RunManager" selected="Go Test.gobench github.com/danvixent/uuid-pool">
     <configuration name="BenchmarkUUIDPool_Get in github.com/danvixent/uuid-pool" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="uuid-pool" />
       <working_directory value="$PROJECT_DIR$" />
@@ -112,10 +108,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.BenchmarkUUIDPool_Get in github.com/danvixent/uuid-pool" />
-        <item itemvalue="Go Test.TestUUIDPool_Get in github.com/danvixent/uuid-pool" />
         <item itemvalue="Go Test.gobench github.com/danvixent/uuid-pool" />
         <item itemvalue="Go Test.go test github.com/danvixent/uuid-pool" />
+        <item itemvalue="Go Test.BenchmarkUUIDPool_Get in github.com/danvixent/uuid-pool" />
+        <item itemvalue="Go Test.TestUUIDPool_Get in github.com/danvixent/uuid-pool" />
         <item itemvalue="Go Test.BenchmarkUUIDPool_Get in uuid-pool" />
       </list>
     </recent_temporary>
@@ -169,22 +165,22 @@
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
     <state x="598" y="296" width="713" height="707" key="EditFileWatcherDialog/0.24.1920.1056@0.24.1920.1056" timestamp="1601925353898" />
-    <state width="1874" height="286" key="GridCell.Tab.0.bottom" timestamp="1602094638961">
+    <state width="1874" height="268" key="GridCell.Tab.0.bottom" timestamp="1602107829980">
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
-    <state width="1874" height="286" key="GridCell.Tab.0.bottom/0.24.1920.1056@0.24.1920.1056" timestamp="1602094638961" />
-    <state width="1874" height="286" key="GridCell.Tab.0.center" timestamp="1602094638957">
+    <state width="1874" height="268" key="GridCell.Tab.0.bottom/0.24.1920.1056@0.24.1920.1056" timestamp="1602107829980" />
+    <state width="1874" height="268" key="GridCell.Tab.0.center" timestamp="1602107829979">
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
-    <state width="1874" height="286" key="GridCell.Tab.0.center/0.24.1920.1056@0.24.1920.1056" timestamp="1602094638957" />
-    <state width="1874" height="286" key="GridCell.Tab.0.left" timestamp="1602094638955">
+    <state width="1874" height="268" key="GridCell.Tab.0.center/0.24.1920.1056@0.24.1920.1056" timestamp="1602107829979" />
+    <state width="1874" height="268" key="GridCell.Tab.0.left" timestamp="1602107829978">
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
-    <state width="1874" height="286" key="GridCell.Tab.0.left/0.24.1920.1056@0.24.1920.1056" timestamp="1602094638955" />
-    <state width="1874" height="286" key="GridCell.Tab.0.right" timestamp="1602094638959">
+    <state width="1874" height="268" key="GridCell.Tab.0.left/0.24.1920.1056@0.24.1920.1056" timestamp="1602107829978" />
+    <state width="1874" height="268" key="GridCell.Tab.0.right" timestamp="1602107829979">
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
-    <state width="1874" height="286" key="GridCell.Tab.0.right/0.24.1920.1056@0.24.1920.1056" timestamp="1602094638959" />
+    <state width="1874" height="268" key="GridCell.Tab.0.right/0.24.1920.1056@0.24.1920.1056" timestamp="1602107829979" />
     <state width="1874" height="354" key="GridCell.Tab.1.bottom" timestamp="1602087559833">
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
@@ -215,7 +211,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/pool .go</url>
-          <line>49</line>
+          <line>62</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
